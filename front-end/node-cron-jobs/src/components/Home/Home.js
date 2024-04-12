@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Home.css';
 import axios from 'axios';
 
 function Home() {
@@ -17,12 +18,13 @@ function Home() {
     };
 
     return (
-        <div>
+        <div className='div'>
             <h2>Send Email</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     Email:
                     <input
+                        autocomplete="off"
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -32,6 +34,7 @@ function Home() {
                 <button type="submit">Send</button>
             </form>
         </div>
+
     );
 }
 

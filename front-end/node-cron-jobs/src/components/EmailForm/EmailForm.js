@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './EmailForm.css';
 import axios from 'axios';
 
 const EmailForm = () => {
@@ -55,18 +56,18 @@ const EmailForm = () => {
   };
 
   return (
-    <div className="container my-5">
-      <h1 className="mb-4">Contact Us</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="email-form-container">
+      <h1>Email Portal</h1>
+      <form onSubmit={handleSubmit} className="email-form">
         <div className="form-group">
           <label htmlFor="email">Email address</label>
-          <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <input type="email" autocomplete="off" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
         <div className="form-group">
           <label htmlFor="subject">Subject</label>
-          <input type="text" className="form-control" id="subject" value={subject} onChange={(e) => setSubject(e.target.value)} required />
+          <input type="text" autocomplete="off" className="form-control" id="subject" value={subject} onChange={(e) => setSubject(e.target.value)} required />
         </div>
-        <div className="form-group bt-24">
+        <div className="form-group">
           <label htmlFor="image">Upload Image</label>
           <input type="file" className="form-control-file" id="image" onChange={handleImageChange} />
         </div>
@@ -83,6 +84,7 @@ const EmailForm = () => {
         </button>
       </form>
     </div>
+
   );
 };
 

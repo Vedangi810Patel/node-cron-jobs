@@ -12,7 +12,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/Email' element={<EmailForm />} />
+            <Route path='/EmailForm' element={<EmailForm />} />
           </Routes>
         </BrowserRouter>
         {/* <Home />   */}

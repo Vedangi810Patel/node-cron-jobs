@@ -71,7 +71,7 @@ const sendEmail = async (req, res) => {
 
     // Email options
     const mailOptions = {
-      from: 'your_email@example.com',
+      from: 'bonypatel810@gmail.com',
       to: email,
       subject: subject,
       attachments: attachments,
