@@ -18,12 +18,13 @@ function Home() {
     };
 
     return (
-        <div className='div'>
+        <div className='email-div'>
             <h2>Send Email</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     Email:
                     <input
+                        placeholder='enter reciever email id'
                         autocomplete="off"
                         type="email"
                         value={email}

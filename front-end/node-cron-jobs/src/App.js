@@ -3,12 +3,13 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home/Home';
 import EmailForm from './components/EmailForm/EmailForm';
+import Header from './components/Header/Header';
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Header />
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -16,7 +17,6 @@ function App() {
           </Routes>
         </BrowserRouter>
         {/* <Home />   */}
-      </header>
     </div>
   );
 }

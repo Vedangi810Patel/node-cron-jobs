@@ -1,51 +1,75 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensuring HTML and body take up full viewport height */
+html,
+body {
+    height: 100%;
+}
+
+/* Centering the email form container */
 .email-form-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    overflow: hidden;
-}
-
-.email-form-container h1 {
-    color: #333
-}
-
-.email-form {
     display: flex;
     flex-direction: column;
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-label {
-    /* font-weight: bold; */
-    color: #333;
-    font-size: 20px;
-    /* Set color for label text */
-}
-
-input[type="email"],
-input[type="text"],
-input[type="file"] {
-    width: calc(100% - 22px);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 600px;
+    margin: 20px auto;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
+/* Styling for the h1 element */
+.email-form-container h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling for the form */
+.email-form {
+    width: 100%;
+}
+
+/* Styling for form groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Styling for labels */
+label {
+    color: #333;
+    font-size: 20px;
+}
+
+/* Styling for input fields */
+input[type="email"],
+input[type="text"],
+input[type="file"],
 button {
-    padding: 5px 10px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Styling for the button */
+button {
     background-color: #007bff;
     color: #fff;
     border: none;
-    font-size: 25px;
     border-radius: 5px;
     cursor: pointer;
-    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 button:hover {
