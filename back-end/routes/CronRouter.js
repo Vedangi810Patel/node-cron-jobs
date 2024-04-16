@@ -24,6 +24,8 @@ router.post('/SendEmailForm', EmailFormController.upload, EmailFormController.se
 
 router.post('/ExcelInsertion', ExcelCotroller.uploadFile);
 
-router.get('/AllProducts', ExcelCotroller.getAllProducts)
+router.get('/AllProducts', ExcelCotroller.getAllProducts);
+
+// router.get('/ExportExcel', ExcelCotroller.ExportExcel);
 
 module.exports = router;

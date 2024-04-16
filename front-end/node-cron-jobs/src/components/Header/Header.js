@@ -4,12 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import useHistory from 'react-router-dom';
 import './Header.css';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
 
   return (
-    <Navbar className='custom-navbar' variant='dark'>
+    <Navbar className='custom-navbar' variant='dark' fixed='top'>
       <Container>
         <Nav className="me-auto">
           <Nav.Link className='link' href="/"> ColnJob </Nav.Link>

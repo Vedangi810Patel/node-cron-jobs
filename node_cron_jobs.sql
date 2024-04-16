@@ -107,9 +107,9 @@ ALTER TABLE `categories`
 --
 -- Indexes for table `products`
 --
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`),
-  ADD KEY `category_id` (`category_id`);
+  ALTER TABLE `products`
+    ADD PRIMARY KEY (`product_id`),
+    ADD KEY `category_id` (`category_id`);
 
 --
 -- Indexes for table `update_counter`

@@ -16,9 +16,10 @@ const uploadFile = async (req, res, next) => {
 
             const sequelize = db;
 
-            let insertedCount = 0; 
+            let insertedCount = 0;
 
             for (const row of data) {
+
                 console.log('Discount percent:', row.discount_percent);
                 const discountedPrice = row.price - (row.price * row.discount_percent) / 100;
 
@@ -31,7 +32,7 @@ const uploadFile = async (req, res, next) => {
                         row.product_desc,
                         row.price,
                         row.discount_percent,
-                        discountedPrice, 
+                        discountedPrice,
                         row.product_sku,
                         row.variant_id,
                         row.category_id
@@ -82,7 +83,8 @@ const getAllProducts = async (req, res) => {
     }
 }
 
+
 module.exports = {
     uploadFile,
-    getAllProducts
+    getAllProducts,
 };

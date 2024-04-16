@@ -42,44 +42,45 @@ const AllProducts = () => {
                 product_sku,
                 category_name
             }));
-    
+
             // Convert the data to a worksheet
             const worksheet = XLSX.utils.json_to_sheet(filteredData);
-    
+
             // Create a workbook and add the worksheet
             const workbook = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(workbook, worksheet, 'Products');
-    
+
             // Generate unique timestamp for filename
             const timestamp = new Date().toISOString().replace(/:/g, '-');
-    
+
             // Save the workbook as a file with unique timestamp
             XLSX.writeFile(workbook, `products_${timestamp}.xlsx`);
         } catch (error) {
             console.error('Error exporting to Excel:', error);
         }
     };
-    
+
 
     const columns = [
         { field: 'product_id', headerName: 'ID', width: 100 },
         { field: 'product_name', headerName: 'Name', width: 200 },
-        { field: 'product_desc', headerName: 'Description', width: 200 },
+        { field: 'product_desc', headerName: 'Description', width: 300 },
         { field: 'price', headerName: 'Price', width: 120 },
         { field: 'discount_percent', headerName: 'Discount', width: 120 },
         { field: 'discounted_price', headerName: 'Discounted Price', width: 150 },
         { field: 'product_sku', headerName: 'SKU', width: 150 },
         { field: 'variant_id', headerName: 'Variant ID', width: 150 },
-        { field: 'category_name', headerName: 'Category Name', width: 200 },
+        { field: 'category_name', headerName: 'Category Name', width: 120 },
     ];
 
     return (
-        <div style={{ height: 400, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ height: 'calc(100vh - 64px)', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '10px' }}>
 
-            <div style={{ height: 'calc(100% - 50px)', width: '100%', margin: '10px' }}>
-                <DataGrid
+            <div style={{ height: 'calc(100% - 50px)', width: '90%', margin: '10px', paddingTop: '64px' }}>
+                <DataGrid 
                     rows={data}
-                    columns={columns}
+                    columns={columns} 
+                    pagination={false} 
                 />
             </div>
 

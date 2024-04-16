@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './ImportExcel.css'
 import { Form, Button, InputGroup } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { toast, ToastContainer } from 'react-toastify';
 
 const FileUploadForm = () => {
     const [file, setFile] = useState(null);
@@ -23,16 +24,20 @@ const FileUploadForm = () => {
                 }
             });
 
+            toast.success("Data Inserted Successfully !");
+            window.location.replace('/ExportExcel');
+            
             console.log(response.data);
             // Optionally, you can show a success message or redirect to another page upon successful upload
         } catch (error) {
+            toast.error("Unable to Insert the Data!!")
             console.error('Error uploading file:', error);
             // Optionally, you can show an error message to the user
         }
     };
 
-    return (
-        <div className="container">
+    return (   
+        <div className="import" style= {{ padding: '5%' }} > {/* Add paddingTop to prevent content from being hidden under fixed Navbar */}
             <h1>Upload Excel File</h1>
             <Form onSubmit={handleSubmit}>
                 <InputGroup className="mb-3">
@@ -46,6 +51,7 @@ const FileUploadForm = () => {
                     <Button type="submit" variant="outline-secondary">Upload</Button>
                 </InputGroup>
             </Form>
+            <ToastContainer /> {/* Moved ToastContainer here */}
         </div>
     );
 }
