@@ -7,18 +7,20 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  
-    return (
-      <Navbar className='custom-navbar' variant='dark'>
-        <Container>
-          <Nav className="me-auto">
+
+  return (
+    <Navbar className='custom-navbar' variant='dark'>
+      <Container>
+        <Nav className="me-auto">
           <Nav.Link className='link' href="/"> ColnJob </Nav.Link>
           <Nav.Link className='link' href="/EmailForm"> EmailPortal </Nav.Link>
-          </Nav >
-        </Container>
-      </Navbar>
-    );
-  } 
+          <Nav.Link className='link' href="/ExcelInsertion"> ImportExcel </Nav.Link>
+          <Nav.Link className='link' href="/ExportExcel"> ExportExcel </Nav.Link>
+        </Nav >
+      </Container>
+    </Navbar>
+  );
+}
 
 
 export default Header;

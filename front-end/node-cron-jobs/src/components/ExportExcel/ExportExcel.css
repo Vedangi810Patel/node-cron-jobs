@@ -1,0 +1,9 @@
+.custom-header {
+    background-color: brown;
+    /* Change header background color */
+}
+
+.custom-data-grid {
+    margin-top: 20px;
+    /* Add margin to the top for center alignment */
+}
